@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/oculo/static/css/main.1aa64033.css",
+    "main.js": "/oculo/static/js/main.2a39f92f.js",
+    "static/js/787.9b23b3f1.chunk.js": "/oculo/static/js/787.9b23b3f1.chunk.js",
+    "index.html": "/oculo/index.html",
+    "main.1aa64033.css.map": "/oculo/static/css/main.1aa64033.css.map",
+    "main.2a39f92f.js.map": "/oculo/static/js/main.2a39f92f.js.map",
+    "787.9b23b3f1.chunk.js.map": "/oculo/static/js/787.9b23b3f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1aa64033.css",
+    "static/js/main.2a39f92f.js"
+  ]
+}
