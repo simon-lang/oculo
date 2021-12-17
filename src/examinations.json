@@ -19,14 +19,14 @@
           "eye": "L",
           "modality": "OP",
           "note": "Right eye looks normal",
-          "thumbnail": "/images/20190401_op_left.jpg"     
+          "thumbnail": "/images/20190401_op_left.jpg"
         },
         {
           "eye": "R",
           "modality": "OP",
           "note": "Left eye looks normal",
           "thumbnail": "/images/20190401_op_right.jpg"
-        }    
+        }
       ]
     },
     {
