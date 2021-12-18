@@ -1,5 +1,10 @@
 # Oculo
 
+This component is accessible at [https://simon-lang.github.io/oculo/](https://simon-lang.github.io/oculo/)
+
+If you wish to run it yourself, please clone this repository, `npm install` and `npm start`
+
+
 ## Choice of technology
 
 Create React App was used to bootstrap the project and start with sensible webpack configuration.
@@ -45,7 +50,7 @@ Obviously a full solution for something like this would probably support facetin
 
 ### Click to view fullscreen image
 
-It feels strange to have a list of items that can not be inspected in more detail. In the case on images, it's almost guaranteed the user would want to inspect them in more detail. So I added a very basic fullscreen class that expands the image to fill the users screen.
+It feels strange to have a list of items that can not be inspected in more detail. In the case on images, it's almost guaranteed the user would want to inspect them in more detail. So I added a very basic fullscreen class that expands the image to fill the users screen. Press escape or click again to exit.
 
 ### Unit tests
 
@@ -62,5 +67,9 @@ Basic date parsing and formatting was applied. Obviously this might not be the d
 ## Other notes
 
 The top level component is called App. Obviously if this component were to be part of a larger application it would be renamed to GroupedImageList or something more domain specific.
+
+No routing was added. It might make sense to persist the group/filter or fullscreen choices in the URL and support browser navigation, but was left out for now.
+
+The visual design is actually the part I am least happy with. In particular the nested "card within cards" to show the groupings doesn't look great. I would like to think that in an existing app there would be a design system or precedent for layouts like this.
 
 If you have any comments or feedback, please don't hesitate to get in touch.
