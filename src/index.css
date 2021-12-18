@@ -1,4 +1,25 @@
+:root {
+  --bs-primary: #e9573e;
+}
+
+.list-group-item.active {
+  background: var(--bs-primary);
+  border-color: #e9573e;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 2;
+  max-height: 100vh;
+  overflow-y: auto;
+  min-height: 100%;
 }
