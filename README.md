@@ -4,7 +4,6 @@ This component is accessible at [https://simon-lang.github.io/oculo/](https://si
 
 If you wish to run it yourself, please clone this repository, `npm install` and `npm start`
 
-
 ## Choice of technology
 
 Create React App was used to bootstrap the project and start with sensible webpack configuration.
@@ -13,7 +12,7 @@ Typescript was chosen because even when not being used to its full potential, th
 
 Prettier is used to auto format code.
 
-Bootstrap was used mostly to provide a grid layout that works well at all screen sizes. 
+Bootstrap was used mostly to provide a grid layout that works well at all screen sizes.
 
 Create React App comes with testing-library and jest, which allows for the creation of some basic unit tests which check the core functionality works as expected.
 
@@ -26,7 +25,6 @@ The supplied sample data was already grouped by date. Since we want to allow the
 Now we are working with a simple array, we allow the user to select a field, and use lodash's `groupBy` function to group them.
 
 For each group we render a heading and a list of cards. Each card contains the image and its associated metadata.
-
 
 ## Extra functionality
 

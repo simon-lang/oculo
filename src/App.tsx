@@ -1,24 +1,25 @@
 import './App.css'
+import Fuse from 'fuse.js'
 import Image from './Image'
 import ImageCard from './ImageCard'
 import React from 'react'
 import classNames from 'classnames'
 import eyeLabel from './eyeLabel'
 import formatDate from './formatDate'
-import images from './data.json'
+import data from './data.json'
 import { groupBy } from 'lodash'
 
 function App() {
+  const [images, setImages] = React.useState<Array<Image>>(data)
   const [group, setGroup] = React.useState<string>('date')
   const [grouped, setGrouped] = React.useState<any>(groupBy(images, group))
-  const [showAll, setShowAll] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string>('')
   const groupKeys = ['date', 'modality', 'eye']
 
   React.useEffect(() => {
     setFilter('')
     setGrouped(groupBy(images, group))
-  }, [group])
+  }, [group, images])
 
   const groupClass = (field: string) => {
     const active = field === group
@@ -39,10 +40,29 @@ function App() {
     })
   }
 
+  const search = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const term = e.currentTarget.value
+    if (!term) {
+      setImages(data)
+      return
+    }
+    const fuse = new Fuse(data, {
+      keys: ['note'],
+      threshold: 0.5,
+    })
+    const results = fuse.search(term).map((d) => d.item)
+    setImages(results)
+  }
+
   return (
     <div className="App p-4 bg-light bg-gradient">
       <div className="row">
         <div className="col-md-3 col-xl-2">
+          <h4>Search</h4>
+          <div className="mb-5">
+            <input type="text" onChange={search} placeholder="Search notes..." />
+          </div>
+
           <h4>Group</h4>
           <div className="list-group mb-5">
             {groupKeys.map((key: string) => (
@@ -79,7 +99,7 @@ function App() {
             .map((key: string) => {
               return (
                 <div className="card mb-5" key={'group-' + key}>
-                  <h3 className="mb-2 text-capitalize card-header bg-dark text-white">
+                  <h3 className="mb-2 text-capitalize card-header">
                     {group === 'date' ? formatDate(key) : ''}
                     {group === 'modality' && 'Modality: ' + key}
                     {group === 'eye' && eyeLabel(key)}
