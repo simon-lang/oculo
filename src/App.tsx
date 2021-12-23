@@ -15,10 +15,11 @@ function App() {
   const [filter, setFilter] = React.useState<string>('')
   const groupKeys = ['date', 'modality', 'eye']
 
-  React.useEffect(() => {
+  const changeGroup = (group: any) => {
+    setGroup(group)
     setFilter('')
     setGrouped(groupBy(images, group))
-  }, [group])
+  }
 
   const groupClass = (field: string) => {
     const active = field === group
@@ -48,7 +49,7 @@ function App() {
             {groupKeys.map((key: string) => (
               <button
                 className={groupClass(key)}
-                onClick={() => setGroup(key)}
+                onClick={() => changeGroup(key)}
                 key={'group-toggle-' + key}
               >
                 {key}
