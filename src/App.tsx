@@ -11,7 +11,6 @@ import { groupBy } from 'lodash'
 function App() {
   const [group, setGroup] = React.useState<string>('date')
   const [grouped, setGrouped] = React.useState<any>(groupBy(images, group))
-  const [showAll, setShowAll] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string>('')
   const groupKeys = ['date', 'modality', 'eye']
 

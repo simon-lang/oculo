@@ -11,7 +11,7 @@ test('Renders', () => {
 
 test('Default list by date', async () => {
   render(<App />)
-  const groups = await screen.getAllByRole('heading', { level: 3 })
+  const groups = screen.getAllByRole('heading', { level: 3 })
   expect(groups).toHaveLength(2)
   screen.getByText(/1 Apr, 2019/i)
   screen.getByText(/13 Apr, 2019/i)

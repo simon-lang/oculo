@@ -15,7 +15,7 @@ export default function Card(props: any) {
 
   // Exit fullscreen on escape keypress
   React.useEffect(() => {
-    const handler = document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('keydown', onKeyDown)
     return () => {
       document.removeEventListener('keydown', onKeyDown)
     }
